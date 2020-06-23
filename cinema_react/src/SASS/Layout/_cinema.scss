@@ -1,0 +1,306 @@
+.activeLM {
+    opacity: 1 !important;
+    img {
+        opacity: 1 !important;
+    }    
+    box-shadow: inset 0px 0px 7px 7px $color-gray-6;
+}
+
+.scrollbar-sunny-morning::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: $color-trans;
+    border-radius: 10px; }
+    
+.scrollbar-sunny-morning::-webkit-scrollbar {
+    width: 5px;
+    background-color: black; }
+
+.scrollbar-sunny-morning::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(330deg, #f6d365 0%, #fda085 100%);
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); }
+
+.scrollbar-sunny-morning {
+    scrollbar-color: #f6d365 #F5F5F5;
+}
+
+.cinema {
+    padding: 50px 0;    
+    .brands {
+        float: left;
+        height: 692px;
+        width: 107px;
+        float: left;
+        border: 1px solid #ebebec;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        padding: 0;
+        .brands__item {
+            background-color: $color-trans;
+            width: 100%; 
+            height: calc(690px / 6);
+            line-height: calc(690px / 6);
+            display: flex;
+            border: 0;
+            align-items: center;             
+            position: relative;
+            outline: none;
+            img {
+                width: 60px;
+                height: 60px;
+                text-align: center;
+                transform: translateX(25%);
+                opacity: .5;
+            }  
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: calc(100% - 30px);
+                transform: translateX(-50%);
+                border-bottom: 1px solid #ebebec;
+                opacity: .5 !important;
+            }   
+            &:nth-last-child(1)::after {
+                width: 0;
+            }
+            &:hover, &:active {
+                img {
+                    opacity: 1;
+                }
+                box-shadow: inset 0px 0px 5px 5px $color-gray-6;
+            }                        
+        }
+    }
+
+    .listCinema {
+        float: left;
+        height: 692px;
+        border: 1px solid #ebebec;
+        width: 26%;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0px 0px 5px 5px $color-gray-6;
+        &:hover {
+            overflow-y: auto;
+        }
+        .cinema__item {
+            display: block;
+            .cinemaInfo {
+                background-color: $color-trans;
+                width: 100%;
+                padding: 10px;
+                display: flex;
+                letter-spacing: 1px;   
+                font-weight: 500;     
+                box-sizing: border-box; 
+                position: relative;
+                transition: 0.3s;
+                opacity: .5;
+                text-align: start;
+                border: 0;
+                outline: none;
+                &:hover, &:active {
+                    opacity: 1;
+                }
+                .cinemaImage {
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 8px;
+                //     &:hover+.wrapInfo>.cinemaName { 
+                //         white-space: normal;
+                //     } 
+                }
+                .wrapInfo {
+                    width: calc(100% - 60px - 10px);
+                    font-size: 14px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                    .cinemaName {
+                        margin-bottom: 2px;
+                        color: white;
+                        word-wrap: break-word;
+                    }
+                    .cinemaAdd {
+                        font-size: 14px;
+                        font-weight: 500;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        color: $color-gray-3;
+                        font-style: italic;
+                    } 
+                    .cinemaDetail {
+                        a{
+                            color: $color-red-3;
+                        }     
+                    } 
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: calc(100% - 20px);
+                    transform: translateX(-50%);
+                    border-bottom: 1px solid #fff;
+                    opacity: .5;
+                }
+            }
+            &:nth-last-child(1) {
+                display: none;
+                color: white;
+                text-align: center;
+                margin-top: 30px;
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    
+    .listMovie {
+        color: white;
+        height: 692px;
+        width: calc(100% - 27% - 107px);
+        border: 1px solid #ebebec;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0px 0 5px 5px $color-gray-6;
+        &:hover {
+            overflow-y: auto;
+        }
+        .listMovie__brand {            
+            .timeOnShow {
+                position: relative;
+                padding: 15px 0 10px 10px;
+                .showTime__content {
+                    display: flex;
+                    .sT-content__image {
+                        width: 60px;
+                        height: 60px;
+                        object-fit: cover;
+                        margin-right: 8px;
+                    }
+                    .sT-content__text {
+                        height: 50px;
+                        .sT-c-text__info {
+                            margin: 5px 0;
+                            .sT-c-t-info__limitAge {
+                                background-color: #fb4226;
+                                font-size: 18px;
+                                font-weight: 600;
+                                text-align: right;
+                                color: #fff;
+                                border-radius: 4px;
+                                padding: 2px 5px;
+                                margin-right: 5px;
+                                min-width: 33px;
+                            }
+                            .sT-c-t-info__title {
+                                font-size: 20px;
+                                color: black;
+                                font-weight: 600;
+                                letter-spacing: 2px;
+                                color: #fff;
+                            }
+                        }
+                        .sT-c-text__showDuration {
+                            margin-top: 0;
+                            font-size: 12px;
+                            color: #9b9b9b;
+                            letter-spacing: 1px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: $color-gray-3;
+                            font-style: italic;
+                        }
+                    }
+                }
+                .showTime__schedule {
+                    display: flex;
+                    margin-top: 10px;
+                    .sT-schedule__2d3d {
+                        margin-right: 8px;
+                        min-width: 60px;
+                        text-align: center;
+                        p:nth-child(1) {
+                            font-weight: 700;
+                            font-size: 30px;
+                            font-family: cursive;
+                            margin: 0 auto;
+                        }
+                        p:nth-child(2) {
+                            font-weight: 700;
+                            font-size: 10px;
+                            font-family: cursive;
+                            margin: 0 auto;
+                            letter-spacing: 1px;
+                        }
+                    }
+                    .sT-schedule__sessions {
+                        display: flex;
+                        flex-wrap: wrap;
+                        min-width: calc(100% - 60px);
+                        a {
+                            width: 145px;
+                            text-align: center;
+                            background-color: rgba(246, 246, 246, 0.5);
+                            color: rgb(155, 155, 155);
+                            margin: 10px 10px 10px 0px;
+                            padding: 8px 3px 3px 3px;
+                            transition: all 0.2s ease 0s;
+                            text-decoration: none;
+                            border-radius: 7px;
+                            border-width: 1px;
+                            border-style: solid;
+                            border-color: rgb(228, 228, 228);
+                            letter-spacing: 1px;
+                            span {
+                                font-size: 20px;
+                                font-weight: 500;
+                                color: #31ff31;
+                                font-family: 'Overpass', sans-serif;
+                                .endTime {
+                                    color: #1b273a;
+                                }
+                            }
+                        }
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: calc(100% - 30px);
+                    transform: translateX(-50%);
+                    border-bottom: 1px solid #fff;
+                    border-color: rgba(238,238,238,.88);
+                }
+            }
+            &:nth-last-child(1) {
+                display: none;
+                text-align: center;
+                margin-top: 30px;
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cinema {
+        .brands, .listCinema, .listMovie {
+            width: 100%;
+        }
+    }
+  }
+
+

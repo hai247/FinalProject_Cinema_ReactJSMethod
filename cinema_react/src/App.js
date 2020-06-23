@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import HomeTemplate from './template/HomeTemplate';
+import {routesHome} from './routes'
 
 function App() {
+  const showMenuHome = routes => {
+    if (routes && routes.length > 0) {
+      return routes.map((item, index) => {
+        return (
+          <HomeTemplate
+            key={index}
+            exact={item.exact}
+            path={item.path}
+            Component={item.component}
+          />
+        );
+      });
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        {showMenuHome(routesHome)}
+        {/* <Route exact path="/auth" component={Auth} /> */}
+        {/* Trang chu - localhost:3000 */}
+        {/* <Route exact path="/" component={HomePage} /> */}
+
+        {/* Trang About - localhost:3000/about */}
+        {/* <Route path="/about" component={About} /> */}
+
+        {/* Trang ListMovie - localhost:3000/list-movie */}
+        {/* <Route path="/list-movie" component={ListMovie} /> */}
+
+        {/* Trang Không tồn tại */}
+        {/* <Route path="" component={PageNotFound} /> */}
+      </Switch>
+    </BrowserRouter>
   );
 }
 

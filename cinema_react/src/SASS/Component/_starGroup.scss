@@ -1,0 +1,10 @@
+.starGroup{
+    text-align: center;
+    i{
+        font-size: 1.2rem;
+        color: $color-yellow;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

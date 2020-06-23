@@ -1,0 +1,130 @@
+// HEADING
+@mixin styleText($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin styleFormSearch($bg-form, $border-form, $bg-input, $boder-input) {
+    .input-group {
+        // $color-white-cream
+        background-color: $bg-form;
+        // $color-white-cream
+        border: 1px solid $border-form;
+        .form-control {
+            background-color: $color-trans;
+            border: 1px solid $color-trans;
+            &:focus {
+                box-shadow: none;
+                // $color-white-0
+                background-color: $bg-input;
+                // $color-gray-6
+                border-top: 1px solid $boder-input;
+                border-bottom: 1px solid $boder-input;
+                border-left: 1px solid $boder-input;
+                & + .input-group-append {
+                // Đi lấy các thẻ bên dưới cùng cấp của class "form-control"
+                    .input-group-text {
+                        box-shadow: none;
+                        background-color: $bg-input;
+                        border-top: 1px solid $boder-input;
+                        border-bottom: 1px solid $boder-input;
+                        border-right: 1px solid $boder-input;
+                        &:hover {
+                            background-color: $color-red-0;
+                            color: $color-white-0;
+                        }
+                    }
+                }
+            }
+        }
+        .input-group-text {
+            background-color: $color-trans;
+            border: 1px solid $color-trans;
+            color: $color-red-0;
+            &:hover {
+                background-color: $color-red-0;
+                color: $color-white-0;
+            }
+        }
+    }
+}
+
+// Method 1:
+// @mixin styleButton($bg, $color, $bd, $pd-tb, $pd-lr, $bg-hover, $color-hover, $bd-hover) {
+//     background-color: $bg;
+//     color: $color;
+//     border: 1px solid $bd;
+//     padding: $pd-tb $pd-lr;
+
+    
+//     &:hover {
+//         background-color: $bg-hover;
+//         color: $color-hover;
+//         border: 1px solid $bd-hover;
+//     }
+// }
+
+// Method 2:
+@mixin styleButton($bg, $color, $bd, $pd-tb, $pd-lr) {
+    background-color: $bg;
+    color: $color;
+    border: 1px solid $bd;
+    padding: $pd-tb $pd-lr;
+}
+
+@mixin styleButtonHover($bg-hover, $color-hover, $bd-hover) {
+    background-color: $bg-hover;
+    color: $color-hover;
+    border: 1px solid $bd-hover;
+    border-radius: 0.25rem;
+}
+
+@mixin screenResponsive($screen) {
+    // Kiểm tra giá trị user truyền vào có tồn tại ko
+    // map là tên của mảng
+    // key là tham số truyền vào
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @warn 'Giá trị không hợp lệ';
+    }
+}
+
+@mixin owlCarousel {
+    a {
+        text-decoration: none;
+        .card-title {
+            @include styleText($fs-0, $fw-bold, $color-black-0);
+        }
+        .card-text {
+            @include styleText($fs-1, $fw-normal, $color-gray-4);                
+        }
+        .rating {
+            .rating__stars {
+                @include styleText($fs-1, $fw-normal, $color-yellow);
+            }
+            span:nth-child(2) {
+                @include styleText($fs-1, $fw-bold, $color-gray-4);
+            }
+            span:last-child {
+                @include styleText($fs-1, $fw-normal, $color-gray-4);
+            }
+        }
+        .price {
+            text-align: right;
+            .old-price {
+                @include styleText($fs-1, $fw-normal, $color-gray-4);         
+                text-decoration: line-through;
+            }
+            .new-price {
+                @include styleText($fs-1 + 3, $fw-bold, $color-black-0);         
+            }
+
+        }
+    }
+}

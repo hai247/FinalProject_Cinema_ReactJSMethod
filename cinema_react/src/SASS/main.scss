@@ -1,0 +1,22 @@
+@import './Helper/variables';
+@import './Helper/mixin';
+
+@import './Layout/header';
+@import './Layout/carousel';
+@import './Layout/showTime';
+@import './Layout/cinema';
+@import './Layout/info';
+@import './Layout/swiperSlide';
+
+
+@import './Component/modalTrailer';
+@import './Component/showTimeItem';
+@import './Component/modalLogin';
+@import './Component/detailInfo';
+@import './Component/starGroup';
+@import './Component/btnticket';
+@import './Component/tab';
+
+@import './Base/body-bg';
+
+@import './Base/customize';

@@ -1,0 +1,12 @@
+.detailInfo{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    p{
+        display: block;
+        color: $color-gray-3;
+        font-size: $fs-1;
+    }
+    .field{
+        font-weight: bold;
+    }
+}
